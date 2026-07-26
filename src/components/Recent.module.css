@@ -8,17 +8,6 @@
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 37.5em) {
-  .recent {
-    overflow: auto;
-  }
-}
-
-@media only screen and (max-width: 25em) {
-  .recent {
-    overflow-x: scroll;
-  }
-}
 .recent p {
   font-size: 1.8rem;
   color: #1e4a73;

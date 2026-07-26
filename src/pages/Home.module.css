@@ -30,6 +30,11 @@ main {
   padding: 2rem 3rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .history {
+    overflow-x: scroll;
+  }
+}
 .title {
   font-family: cursive;
   text-align: center;
