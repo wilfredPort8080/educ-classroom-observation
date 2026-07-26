@@ -10,10 +10,7 @@ const initialState = {
   selectTeacher: [],
 };
 
-const BASE_URL =
-  import.meta.env.MODE === "production"
-    ? "https://edu-mongo-database.onrender.com/api/"
-    : "http://localhost:8080/api/";
+const BASE_URL = "https://edu-mongo-database.onrender.com/api/";
 
 const reducer = (state, action) => {
   switch (action.type) {
