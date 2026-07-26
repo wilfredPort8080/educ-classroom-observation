@@ -1,0 +1,63 @@
+.recent {
+  padding: 1rem 1rem;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .recent {
+    overflow: auto;
+  }
+}
+
+@media only screen and (max-width: 25em) {
+  .recent {
+    overflow-x: scroll;
+  }
+}
+.recent p {
+  font-size: 1.8rem;
+  color: #1e4a73;
+}
+
+.recent button {
+  background-color: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: #1e4a73;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.recent button:hover {
+  background-color: #ffb545;
+  color: #fff;
+  padding: 0.5rem 2rem;
+}
+
+.result {
+  background-color: #fff;
+  margin: 1rem auto;
+  width: 80%;
+  padding: 2rem 3rem;
+  border-radius: 7px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* bottom shadow only */
+}
+
+@media only screen and (max-width: 37.5em) {
+  .result {
+    width: 100%;
+    min-width: 50rem;
+  }
+}
+
+.result h1 {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}

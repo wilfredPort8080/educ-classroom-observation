@@ -1,0 +1,45 @@
+.commercial {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  margin-bottom: 5rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .commercial {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    margin-bottom: 2rem;
+  }
+}
+
+.container {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 7px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* bottom shadow only */
+
+  display: grid;
+  width: 40rem;
+  grid-template-columns: 0.5fr 1.5fr;
+}
+.container h4 {
+  font-size: 1.8rem;
+  color: #245b8a;
+  margin-bottom: 1rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container span {
+  font-size: 1.5rem;
+  color: #245b8a;
+  font-weight: 100;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.commercial img {
+  width: 8rem;
+}

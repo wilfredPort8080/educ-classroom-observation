@@ -1,0 +1,93 @@
+.question {
+  background-color: #ffff;
+  margin: 2rem auto;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 60%;
+  padding: 2rem 3rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .question {
+    max-width: none;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  margin-top: 2rem;
+  font-weight: 800;
+  color: #ffb545;
+  font-size: 1.6rem;
+  background-color: #245b8a;
+  padding: 1rem 2rem;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* bottom shadow only */
+}
+
+.question h4 {
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 2rem;
+}
+
+.question li {
+  font-size: 1.6rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.header {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 3rem;
+  width: 100%;
+}
+
+.header h5 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.header p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.line {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.scale {
+  display: flex;
+  align-items: center;
+
+  gap: 4rem;
+}
+
+.btnSide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.7rem;
+}

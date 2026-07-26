@@ -1,0 +1,18 @@
+.textarea {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea h4 {
+  margin-top: 2rem;
+}
+
+.textarea textarea {
+  width: 100%;
+  height: 5rem;
+  font-family: "Courier New", Courier, monospace;
+  background: none;
+  border-radius: 7px;
+  font-size: 1.6rem;
+  border: 1px solid #e0e0e0;
+}

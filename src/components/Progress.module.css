@@ -1,0 +1,26 @@
+.progress {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.2rem;
+  color: inherit;
+}
+
+progress {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 15px;
+}
+progress::-webkit-progress-value {
+  background-color: #245b8a; /* green fill */
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #acaaaa;
+  border-radius: 10px;
+}

@@ -1,0 +1,81 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ul:nth-child(odd) {
+  background-color: #e0e0e0;
+}
+
+.ul:nth-child(even) {
+  background-color: #f9f9f9; /* optional lighter background for contrast */
+}
+
+.ul li {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  padding: 1rem 2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  margin-right: 3rem;
+  list-style: none;
+}
+
+.ul li button {
+  background: none;
+  border: none;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: flex-start;
+  align-items: center;
+
+  background-color: #cce0ff;
+  padding: 1rem 2rem;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.nav h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+}
+
+.status {
+  justify-self: center;
+}
+
+.finish {
+  background-color: #00c46a;
+  border-radius: 7px;
+  padding: 1rem 2rem;
+  align-self: center;
+  justify-self: center;
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+}
+.active {
+  background-color: #f8946f;
+  border-radius: 7px;
+  padding: 1rem 2rem;
+  align-self: center;
+  justify-self: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.btnCta,
+.btnCta:link,
+.btnCta:visited {
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.btnCta:hover {
+  background-color: #ffb545; /* slightly darker blue */
+  transform: translateY(-2px); /* subtle lift effect */
+}

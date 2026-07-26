@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap");
+
+:root {
+  --bp-largest: 75em;
+  --bp-large: 68.75em;
+  --bp-medium: 56.25em;
+  --bp-small: 37.5em;
+  --bp-smallest: 31.25em;
+  --bp-tiny: 25em;
+}
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 35%;
+  }
+}
+body {
+  width: 100%;
+  font-family: "Rubik Spray Paint", system-ui;
+  font-weight: 400;
+  background-color: #dde8e8;
+
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom__single-value {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+.custom__input-container {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+.custom__menu {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+.custom__placeholder {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+.name__control {
+  width: 40rem;
+}
+
+.name-value {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+.name__input-container {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+.name__menu {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+.name__placeholder {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+.name__single-value {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+
+@media print {
+  body {
+    margin: 0; /* remove browser default margins */
+  }
+
+  #printTable {
+    width: 100% !important; /* take full page width */
+    max-width: none !important; /* remove max-width restriction */
+    padding: 5rem !important; /* optional: remove padding */
+  }
+
+  table {
+    width: 100% !important; /* table stretches full width */
+  }
+  #cat {
+    background: #f0f0f0;
+  }
+  th,
+  td {
+    font-size: 14px; /* adjust text size for readability */
+    padding: 10px; /* add spacing */
+  }
+}

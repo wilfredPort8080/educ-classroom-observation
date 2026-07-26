@@ -1,0 +1,148 @@
+.summary {
+  background-color: #ffff;
+  margin: 2rem auto;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 60%;
+  padding: 2rem 3rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.summary img {
+  width: 10rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.college {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.information {
+  font-size: 1.2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.printBtn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.ratingValue {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.comments {
+  margin: 2rem 0;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  padding: 8px;
+}
+.comments h3 {
+  background-color: #e0e0e0;
+}
+.comments ul {
+  padding: 8px;
+  list-style: none;
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 50%;
+  justify-content: flex-start;
+  font-size: 1.3rem;
+  margin: 3rem 0;
+  padding: 8px;
+}
+
+.signature p::before {
+  content: "";
+  display: block;
+  width: 90%;
+
+  height: 1px; /* thin line */
+  background-color: black; /* line color */
+  margin-top: 0.5rem; /* spacing */
+}
+
+.average {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.average p {
+  font-weight: 900;
+  margin-right: 1.5rem;
+  color: #000;
+}
+
+@media print {
+  .evalNav,
+  .printBtn,
+  footer {
+    display: none !important;
+  }
+  #cat {
+    background: #f0f0f0;
+  }
+
+  #printTable {
+    width: 100% !important; /* take full page width */
+    max-width: none !important; /* remove max-width restriction */
+    padding: 5rem !important; /* optional: remove padding */
+  }
+
+  table {
+    width: 100% !important; /* table stretches full width */
+  }
+
+  th,
+  td {
+    font-size: 14px; /* adjust text size for readability */
+    padding: 10px; /* add spacing */
+  }
+  .signature p::before {
+    content: "";
+    display: block;
+    width: 70%;
+    border-top: 1px solid black;
+    height: 1px; /* thin line */
+    background-color: black; /* line color */
+    margin-top: 0.5rem; /* spacing */
+  }
+}
