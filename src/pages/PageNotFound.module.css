@@ -1,0 +1,10 @@
+.page {
+  font-family: "Twemoji Country Flags", cursive !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin: 8rem auto;
+  width: 100%;
+}
