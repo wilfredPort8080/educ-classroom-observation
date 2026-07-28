@@ -11,7 +11,7 @@ const initialState = {
 };
 
 // https://edu-mongo-database.onrender.com/api/
-const BASE_URL = "http://localhost:8080/api/";
+const BASE_URL = "https://edu-mongo-database.onrender.com/api/";
 
 const reducer = (state, action) => {
   switch (action.type) {
