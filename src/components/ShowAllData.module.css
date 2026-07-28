@@ -1,6 +1,11 @@
 .list {
   display: flex;
   flex-direction: column;
+
+  overflow-y: auto;
+  max-height: 85dvh;
+
+  margin-bottom: 1rem;
 }
 
 .ul:nth-child(odd) {
@@ -14,7 +19,7 @@
 .ul li {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr) 0.1fr;
   align-items: center;
   padding: 1rem 2rem;
   font-family: "Courier New", Courier, monospace;
@@ -47,6 +52,7 @@
 
 .status {
   justify-self: center;
+  margin-right: 5rem;
 }
 
 .finish {
@@ -78,4 +84,25 @@
 .btnCta:hover {
   background-color: #ffb545; /* slightly darker blue */
   transform: translateY(-2px); /* subtle lift effect */
+}
+
+.btnDelete {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  color: #bc1b23;
+  transition: all 0.4s;
+}
+
+.btnDelete:hover {
+  background-color: #ffb545;
+  border-radius: 4px;
+  transform: translateY(-2px); /* subtle lift effect */
+}
+
+.noData {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3rem;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
 }

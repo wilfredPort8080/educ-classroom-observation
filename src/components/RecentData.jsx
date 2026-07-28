@@ -3,6 +3,7 @@ import { formatDate } from "../utils/dateFormat";
 import styles from "./RecentData.module.css";
 
 const RecentData = ({ data }) => {
+  if (!Array.isArray(data)) return;
   const latestData = [...data]
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     .slice(0, 5);
@@ -25,7 +26,11 @@ const RecentData = ({ data }) => {
             <p>{teacher.semes.toUpperCase()}</p>
             <NavLink
               className={`${styles.btnCta} ${teacher.status === "finished" ? styles["finish"] : styles["active"]} `}
-              to={`/dashboard/${teacher._id}`}
+              to={
+                teacher.status === "finished"
+                  ? `/dashboard/${teacher._id}`
+                  : `/evaluation/${teacher._id}`
+              }
             >
               {teacher.status.toUpperCase()}
             </NavLink>

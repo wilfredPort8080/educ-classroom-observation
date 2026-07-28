@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import scap from "../assets/scap1.png";
 import styles from "./Banner.module.css";
 
 const Banner = () => {
+  const isNavigate = useNavigate();
   return (
     <div className={styles.banner}>
       <div>
@@ -10,7 +12,7 @@ const Banner = () => {
           Enhancing Teaching Through Effective Observations
         </p>
         <p className={styles.motos}>Empowering Educators to Grow and Succeed</p>
-        <button className={styles.btn}>
+        <button className={styles.btn} onClick={() => isNavigate("/schedule")}>
           Schedule Class Observation &rarr;
         </button>
       </div>

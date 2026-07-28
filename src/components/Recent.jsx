@@ -17,7 +17,7 @@ const Recent = () => {
       </div>
 
       <div className={styles.result}>
-        {!fetchData.length && !isLoading && <h1>No Recent Activities</h1>}
+        {!fetchData?.length && !isLoading && <h1>No Recent Activities</h1>}
         {isLoading ? <Loader /> : <RecentData data={fetchData} />}
       </div>
     </>

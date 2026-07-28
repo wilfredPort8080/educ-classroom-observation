@@ -8,7 +8,7 @@ import Select from "react-select";
 import { useState } from "react";
 
 const Dashboard = () => {
-  const { fetchData, isLoading } = usePostEvaluation();
+  const { fetchData, isLoading, deleteTeacherById } = usePostEvaluation();
 
   // filter states
   const [merge, setMerge] = useState(false);
@@ -16,14 +16,17 @@ const Dashboard = () => {
   const [status, setStatus] = useState(null);
 
   // ✅ merge duplicates if selected
-  const mergedData = merge ? groupDuplicates(fetchData) : fetchData;
+  const mergedData = merge ? groupDuplicates(fetchData || []) : fetchData || [];
 
   // ✅ apply semester + status filters
-  const filteredData = mergedData.filter((item) => {
-    const semesterMatch = semester ? item.semes === semester.value : true;
-    const statusMatch = status ? item.status === status.value : true;
-    return semesterMatch && statusMatch;
-  });
+
+  const filteredData = Array.isArray(mergedData)
+    ? mergedData.filter((item) => {
+        const semesterMatch = semester ? item.semes === semester.value : true;
+        const statusMatch = status ? item.status === status.value : true;
+        return semesterMatch && statusMatch;
+      })
+    : [];
 
   return (
     <>
@@ -66,9 +69,15 @@ const Dashboard = () => {
       </div>
 
       <div className={styles.result}>
-        {!fetchData.length && !isLoading && <h1>No Recent Activities</h1>}
-
-        {isLoading ? <Loader /> : <ShowAllData data={filteredData} />}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ShowAllData
+            data={filteredData}
+            deleteTeacher={deleteTeacherById}
+            isLoading={isLoading}
+          />
+        )}
       </div>
 
       <footer>

@@ -5,10 +5,21 @@ import Question from "../components/Question";
 import styles from "./Evaluation.module.css";
 import Finished from "../components/Finished";
 import usePostEvaluation from "../hooks/usePostEvaluation";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const Evaluation = () => {
   const { state, dispatch } = useEvaluation();
-  const { createEvaluatedTeacher, isLoading } = usePostEvaluation();
+  const {
+    createEvaluatedTeacher,
+    isLoading,
+    updateTeacherEvalById,
+    getFetchById,
+    selectTeacher,
+    dispatch: contextDispatch,
+  } = usePostEvaluation();
+
+  const { id } = useParams();
 
   const {
     status,
@@ -23,8 +34,30 @@ const Evaluation = () => {
     date,
   } = state;
 
+  useEffect(() => {
+    if (id) {
+      getFetchById(id);
+    } else {
+      dispatch({ type: "reset" });
+      contextDispatch({ type: "resetSelectedTeacher" });
+    }
+  }, [id]);
+
   const handleSubmitEvaluated = async () => {
-    if (!status || !name || !semes || !subject) return;
+    // For new evaluation, require all fields
+    if (!id && (!status || !name || !semes || !subject)) return;
+
+    if (id) {
+      const newUpdated = {
+        status: "finished",
+        teacherEval,
+        strongPoints,
+        improvement,
+      };
+      await updateTeacherEvalById(id, newUpdated);
+      dispatch({ type: "finished" });
+      return; // 👈 stop here, don’t create
+    }
 
     const newEvaluated = {
       status: "finished",
@@ -47,7 +80,13 @@ const Evaluation = () => {
         <NavBar />
       </div>
 
-      {status === "ready" && <Information state={state} dispatch={dispatch} />}
+      {status === "ready" && (
+        <Information
+          state={state}
+          teacher={selectTeacher}
+          dispatch={dispatch}
+        />
+      )}
 
       {status === "active" && (
         <Question
@@ -63,7 +102,9 @@ const Evaluation = () => {
         />
       )}
 
-      {status === "finished" && <Finished state={state} />}
+      {status === "finished" && (
+        <Finished state={state} teacher={selectTeacher} />
+      )}
 
       <footer>
         &copy; {new Date().getFullYear()} RICEO. All rights reserved.

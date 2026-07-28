@@ -1,11 +1,16 @@
 import { facultyData, semester } from "../data/educData";
+import { formatDate } from "../utils/dateFormat";
 import styles from "./Information.module.css";
 import Select from "react-select";
 
-const Information = ({ state, dispatch }) => {
+const Information = ({ state, dispatch, teacher }) => {
   const { name, semes, date, subject } = state;
 
-  const hide = !name || !semes || !date || !subject;
+  const hide =
+    !(teacher?._id ? teacher.name : name) ||
+    !(teacher?._id ? teacher.semes : semes) ||
+    !(teacher?._id ? teacher.date : date) ||
+    !(teacher?._id ? teacher.subject : subject);
 
   const handleProceedButton = () => {
     dispatch({ type: "proceed" });
@@ -18,7 +23,7 @@ const Information = ({ state, dispatch }) => {
           <input
             type="date"
             id="date"
-            value={date}
+            value={teacher?._id ? formatDate(teacher.date) : date}
             onChange={(e) =>
               dispatch({
                 type: "updateField",
@@ -39,7 +44,13 @@ const Information = ({ state, dispatch }) => {
               value: sem,
               label: sem,
             }))}
-            value={semes.value}
+            value={
+              semester
+                .map((sem) => ({ value: sem, label: sem }))
+                .find(
+                  (opt) => opt.value === (teacher?._id ? teacher.semes : semes),
+                ) || null // 👈 ensure null, not undefined
+            }
             onChange={(selected) =>
               dispatch({
                 type: "updateField",
@@ -60,7 +71,11 @@ const Information = ({ state, dispatch }) => {
               value: name,
               label: name,
             }))}
-            value={name.value}
+            value={facultyData
+              .map((name) => ({ value: name, label: name }))
+              .find(
+                (opt) => opt.value === (teacher?._id ? teacher.name : name),
+              )}
             onChange={(selected) =>
               dispatch({
                 type: "updateField",
@@ -78,7 +93,7 @@ const Information = ({ state, dispatch }) => {
             type="text"
             id="sub"
             placeholder="Input Subject... "
-            value={subject}
+            value={teacher?._id ? teacher.subject : subject}
             onChange={(e) =>
               dispatch({
                 type: "updateField",
@@ -95,7 +110,7 @@ const Information = ({ state, dispatch }) => {
               className={styles.btn}
               onClick={() => handleProceedButton()}
             >
-              Proceed
+              {teacher?._id ? "Update" : "Proceed"}
             </button>
           </div>
         )}

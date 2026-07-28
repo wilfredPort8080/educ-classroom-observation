@@ -1,7 +1,8 @@
 import styles from "./Finished.module.css";
 import vmuf from "../assets/vmuf.png";
+import { formatDate } from "../utils/dateFormat";
 
-const Finished = ({ state }) => {
+const Finished = ({ state, teacher }) => {
   const { name, semes, subject, date, teacherEval, strongPoints, improvement } =
     state;
 
@@ -32,16 +33,17 @@ const Finished = ({ state }) => {
 
       <div className={styles.information}>
         <p>
-          <strong>Name:</strong> {name}
+          <strong>Name:</strong> {teacher?._id ? teacher.name : name}
         </p>
         <p>
-          <strong>Semester:</strong> {semes}
+          <strong>Semester:</strong> {teacher?._id ? teacher.semes : semes}
         </p>
         <p>
-          <strong>Subject:</strong> {subject}
+          <strong>Subject:</strong> {teacher?._id ? teacher.subject : subject}
         </p>
         <p>
-          <strong>Date Observed:</strong> {date}
+          <strong>Date Observed:</strong>{" "}
+          {teacher?._id ? formatDate(teacher.date) : date}
         </p>
       </div>
 
@@ -98,12 +100,12 @@ const Finished = ({ state }) => {
         <h3>🖊️ Strong Points</h3>
 
         <ul>
-          <li>💫 {strongPoints}</li>
+          <li> {strongPoints && `💫 ${strongPoints} `}</li>
         </ul>
 
         <h3>🖊️ Points for Improvement</h3>
         <ul>
-          <li>💫 {improvement}</li>
+          <li>{improvement && `💫 ${improvement}`}</li>
         </ul>
       </div>
 
