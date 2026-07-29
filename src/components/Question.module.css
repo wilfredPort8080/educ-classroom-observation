@@ -7,6 +7,12 @@
   padding: 2rem 3rem;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .question {
+    max-width: none;
+  }
+}
+
 .btn {
   cursor: pointer;
   margin-top: 2rem;
